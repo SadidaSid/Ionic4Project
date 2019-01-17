@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function() {
+            window.addEventListener("devicemotion", handleMotionEvent, true);
+            drawWave();
+
+        }
+        function drawWave(x,y,z)
+        {
+            var x_def_val=1;
+            var y_def_val=1;
+            var z_def_val=0;
+
+            x = (typeof x === 'undefined') ? x_def_val : x;
+            y = (typeof y === 'undefined') ? y_def_val : y;
+            z = (typeof z === 'undefined') ? z_def_val : z;
+
+            console.log(x);
+            console.log(y);
+
+            var c = document.getElementById("myCanvas");
+            c.height = window.innerHeight;
+            c.width = window.innerWidth;
+
+
+            var x_change=100*x;
+            var y_change=y*2;
+
+            var ctx = c.getContext("2d");
+            ctx.fillStyle="yellow";
+            ctx.fillRect(0,0,c.width,c.height);
+            var i;
+            var amplitude = 90;
+            var width = c.width;
+            var xAxis = 300;
+            var step = 1;
+            var frequency = y_change*4;
+
+
+
+            ctx.moveTo(0, c.height/2);
+            ctx.lineTo(width*100, c.height/2);
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth='1';
+
+            ctx.stroke();
+            ctx.save();
+            if(x>1)
+            ctx.translate(-x_change*100,0)
+
+            ctx.beginPath();
+            ctx.moveTo(0, c.height/2);
+            var j=c.height/2;
+
+            var c = width / Math.PI / (frequency * 2);
+            for (i = 0; i < width*1000; i += step) {
+                var k = amplitude * Math.sin(i / c);
+                ctx.lineTo(i, j + k);
+            }
+            ctx.strokeStyle = '#0096FF';
+            ctx.lineWidth='5';
+
+            ctx.stroke();
+
+            ctx.restore();
+
+
+
+
+        }
+
+
+
+        function handleMotionEvent(event) {
+            var x = event.accelerationIncludingGravity.x;
+            var y = event.accelerationIncludingGravity.y;
+            var z = event.accelerationIncludingGravity.z;
+
+
+            drawWave(x,y,z);
+
+
+        }
+
+
+
+
+
+
+    </script>
+</head>
+<body >
+<canvas id='myCanvas' >
+    Canvas not supported
+</canvas>
+</body>
+</html>
