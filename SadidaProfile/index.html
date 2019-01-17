@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sadida Page week1</title>
+    <base href="." />
+    <style>
+        body{
+            background: #fefcea; /* Old browsers */
+            background: -moz-linear-gradient(-45deg, #fefcea 0%, #f1da36 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, #fefcea 0%,#f1da36 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, #fefcea 0%,#f1da36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        }
+        #my_image {
+            height: 100%;
+            width: 100%;
+        }
+
+
+        #my_information {
+
+            margin-left: 5%;
+            height: 100%;
+            width: 100%;
+
+        }
+        #my_button{
+            height:50px;
+            width:100px;
+            margin-bottom: 40%;
+
+        }
+
+        .data{
+            -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+            box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+
+        }
+        .data:hover{
+            -webkit-box-shadow: 14px 16px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 14px 16px 5px 0px rgba(0,0,0,0.75);
+            box-shadow: 14px 16px 5px 0px rgba(0,0,0,0.75);
+
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+
+
+
+
+    </style>
+    <script>
+        document.getElementById("my_button").onclick = function() {myFunction()};
+
+        function myFunction() {
+
+            var c = document.getElementById("my_canvas");
+
+            var ctx = c.getContext("2d");
+            var x = 50;
+            var y = 50;
+
+            ctx.fillStyle = "lime";
+            ctx.fillRect(x, y, 100, 100);
+
+
+
+        }
+    </script>
+
+</head>
+<body>
+
+<table>
+    <tr>
+    <td>
+<div>
+    <img id="my_image" src="https://lh3.googleusercontent.com/nI29ocHB6b9Dlc78RlytoN9AqsVwhEj9wUhnpRzRUEKdoChFKJO7QYCLlb33mrp7ShamKOx9GSLV5ysdHl6zWcBy8wrUT8BD0S_CE_1z47v8gqagdthFrmuudN949gBG_ZJIMzrBUo60r3TRlIlrbeTMTmDfAyNCr7A3EBMZqENn0q6TDL_O1jpwhWsFNdjGd0j3yY7qQpo-WUTA3RE1Pjbw7Jl5u4J1YVSWsjrlxQGDN9ZJXbvvYDwp9NgNv7xtpEijLu0-npivlFio_E-W3SpoT9YkAb1_8kLPjFkmrmPA_1xoyoKi2LSv-_SEe7vjPLED6op2vMBWWGBJAGJdLPyS6nKljzzU5IvhbB7bPe9UnU9Mk6zMG_or8-pF3JISu7gmY2abrSL-FA3W46q3TkjgrymoXAgsLrtNMEkjiaxL9qb1DgFZFzmYPq5COaPnD3kuGULI2ZLp5p0DjkIXXlPM1CInJOh25s8dFxTbz4CEZjO5sZ6zDyXlJTbFh19VjNXpwtTW2DNlYObYHpFu2IDr04LJzk-R4fGY2N6S-BS8dE7gXMebeY-BIp-9Sk2jocmvOdNcUG7utjbmFJ1XVheidtIYI4qhQpQPOtbCM_tTmHgoXPmIFKRO_eEpqPes=w1702-h1276-no">
+
+</div>
+        </td>
+       <td>
+<div id="my_information">
+    <H1>About me</H1>
+    <p class="data">
+    I am Sadida Siddiqui. I like to travel, read books, cook, play table tennis.
+    </p>
+    <H1>Education</H1>
+    <p class="data">
+        I received my undergraduate degree in computer science from  Gujarat Technological University, India.
+        I joined Masters program of Pace University in Fall 2017 to pursue my postgraduate studies in computer science.
+    </p>
+    <H1>Profile</H1>
+    <p class="data">
+       I have always been interested in projects related to data science, analysis and artificial Intelligence. I worked for gateway technolabs in India for 6 months during which I was working with team developing price comparator. I developed a recommendation system based on web log files in my final year project.
+    </p>
+    
+</div>
+       </td>
+    </tr>
+<tr>
+<td>
+    <div>
+        <canvas id='my_canvas' width='300' height='300'>
+            Canvas not supported
+        </canvas>
+
+    </div>
+    <button id="my_button" onclick="myFunction()">Click me for fun</button>
+</td>
+    <td>
+        <div>
+            <iframe width="315" height="315" src="https://www.youtube.com/embed/8cmx7V4oIR8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </td>
+
+
+</tr>
+</table>
+
+
+</body>
+</html>
