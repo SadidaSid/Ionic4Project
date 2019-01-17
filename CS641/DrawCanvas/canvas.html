@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+            var c,ctx ;
+            var paintbrushcolor="Red";
+            var mouseX,mouseY=0;
+            function ChangeColor(){
+                ctx.fillStyle = "blue";
+            }
+            function getmospos(e){
+                if (!e)
+                    var e = event;
+
+                if (e.offsetX) {
+                    mouseX = e.offsetX;
+                    mouseY = e.offsetY;
+                }
+                else if (e.layerX) {
+                    mouseX = e.layerX;
+                    mouseY = e.layerY;
+                }
+
+            }
+            function drawCircle(c,ctx,mouseX,mouseY){
+                ctx.fillStyle="rgba(0,0,0,0.01)";
+                ctx.fillRect(0,0,c.width,c.height)
+
+            ctx.fillStyle=paintbrushcolor;
+            ctx.beginPath();
+            ctx.arc(mouseX,mouseY,30,0,Math.PI*2,false);
+            ctx.fill();
+            }
+
+            function sketchpad_mouseMove(e) {
+                // Update the mouse co-ordinates when moved
+                getmospos(e);
+                drawCircle(c,ctx,mouseX,mouseY);
+
+            }
+            function ChangeColor(){
+                paintbrushcolor="Blue";
+            }
+            function init() {
+                c=document.getElementById("my_canvas");
+                ctx=c.getContext("2d");
+                c.addEventListener('mousemove', sketchpad_mouseMove, false);
+            }
+    </script>
+</head>
+<body onload="init()">
+<div>
+    <canvas id='my_canvas' width='700' height='700'>
+        Canvas not supported
+    </canvas>
+    <button class="colorbutton" onclick="ChangeColor()">Change color</button>
+</div>
+</body>
+</html>
