@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+     <base href="." />
+    <script>
+        var canvas,c;
+
+
+
+
+
+
+
+
+        function drawLines(canvas,c){
+            c.fillStyle="rgba(0,0,0.0.0.1)";
+            c.fillRect(0,0,canvas.width,canvas.height);
+            var broadness=canvas.width/50;
+            for(let n=0; n<canvas.width; n+=canvas.width/2){
+
+
+
+
+                for(let m=0; m<canvas.height; m+=canvas.height/2)
+                {   var colorflag=0;
+                   var x_offset=0;
+                   var y_offset=0;
+                   var thickness=broadness;
+
+                    for(let unit=canvas.height/2;unit>0;unit-=2*canvas.height/50) {
+                        if(colorflag%2==0)
+                        {  c.clearRect(m+x_offset,n+y_offset,unit,unit);
+                            c.fillStyle = "black";
+                            c.strokeStyle="rgba(0,0,0,0.1)";
+                             c.lineWidth=thickness/2;
+                             c.strokeRect(m+x_offset,n+y_offset,unit,unit);}
+                        else
+                        {
+
+                            c.clearRect(m+x_offset-(thickness/5),n+y_offset-(thickness/5),unit,unit);
+                            c.fillStyle = "white";
+                            c.strokeStyle="rgba(0,0,0,0.1)";
+                            c.lineWidth=thickness/2;
+                            c.strokeRect(m+x_offset,n+y_offset,unit,unit);
+                        }
+
+                        c.fillRect(m+x_offset,n+y_offset,unit,unit);
+                        colorflag=colorflag+1;
+                        x_offset+=broadness;
+                        y_offset+=broadness;
+
+
+
+
+
+                    }
+
+
+
+                    /*                                    */
+
+                    var t,s;
+                    var colorflag=0;
+                    var x_offset=0;
+                    var y_offset=0;
+                    var thickness=broadness;
+                    if(m==0) {
+                        t = m - canvas.height / 4;
+                        s = n+canvas.height / 4;
+                        c.clearRect(t, s, canvas.height / 2, canvas.height / 2);
+
+                        for (let unit = canvas.height / 2; unit > 0; unit -= 2 * canvas.height / 50) {
+                            if (colorflag % 2 == 0) {
+                                c.clearRect(t + x_offset, s + y_offset, unit, unit);
+                                c.fillStyle = "black";
+                                c.strokeStyle = "rgba(0,0,0,0.1)";
+                                c.lineWidth = thickness / 2;
+                                c.strokeRect(t + x_offset, s + y_offset, unit, unit);
+                            }
+                            else {
+
+                                c.clearRect(t + x_offset - (thickness / 5), s + y_offset - (thickness / 5), unit, unit);
+                                c.fillStyle = "white";
+                                c.strokeStyle = "rgba(0,0,0,0.1)";
+                                c.lineWidth = thickness / 2;
+                                c.strokeRect(t + x_offset, s + y_offset, unit, unit);
+                            }
+
+                            c.fillRect(t + x_offset, s + y_offset, unit, unit);
+                            colorflag = colorflag + 1;
+                            x_offset += broadness;
+                            y_offset += broadness;
+
+
+                        }
+
+
+
+
+
+                    }
+                    if(n==0)
+                    {
+
+                        t = m+ canvas.height / 4;
+                        s = n-canvas.height / 4;
+                        x_offset=0;
+                        y_offset=0;
+
+                        c.clearRect(t, s, canvas.height / 2, canvas.height / 2);
+                        colorflag=0;
+
+                        for (let unit = canvas.height / 2; unit > 0; unit -= 2 * canvas.height / 50) {
+                            if (colorflag % 2 == 0) {
+                                c.clearRect(t + x_offset, s + y_offset, unit, unit);
+                                c.fillStyle = "black";
+                                c.strokeStyle = "rgba(0,0,0,0.1)";
+                                c.lineWidth = thickness / 2;
+                                c.strokeRect(t + x_offset, s + y_offset, unit, unit);
+                            }
+                            else {
+
+                                c.clearRect(t + x_offset - (thickness / 5), s + y_offset - (thickness / 5), unit, unit);
+                                c.fillStyle = "white";
+                                c.strokeStyle = "rgba(0,0,0,0.1)";
+                                c.lineWidth = thickness / 2;
+                                c.strokeRect(t + x_offset, s + y_offset, unit, unit);
+                            }
+
+                            c.fillRect(t + x_offset, s + y_offset, unit, unit);
+                            colorflag = colorflag + 1;
+                            x_offset += broadness;
+                            y_offset += broadness;
+
+
+                        }
+
+
+
+
+
+
+                    }
+                    if(n>0 && m>0)
+                    {
+
+                        t = m+ canvas.height / 4;
+                        s = n+canvas.height / 4;
+                        x_offset=0;
+                        y_offset=0;
+
+                        c.clearRect(t, s, canvas.height / 2, canvas.height / 2);
+                        colorflag=0;
+
+                        for (let unit = canvas.height / 2; unit > 0; unit -= 2 * canvas.height / 50) {
+                            if (colorflag % 2 == 0) {
+                                c.clearRect(t + x_offset, s + y_offset, unit, unit);
+                                c.fillStyle = "black";
+                                c.strokeStyle = "rgba(0,0,0,0.1)";
+                                c.lineWidth = thickness / 2;
+                                c.strokeRect(t + x_offset, s + y_offset, unit, unit);
+                            }
+                            else {
+
+                                c.clearRect(t + x_offset - (thickness / 5), s + y_offset - (thickness / 5), unit, unit);
+                                c.fillStyle = "white";
+                                c.strokeStyle = "rgba(0,0,0,0.1)";
+                                c.lineWidth = thickness / 2;
+                                c.strokeRect(t + x_offset, s + y_offset, unit, unit);
+                            }
+
+                            c.fillRect(t + x_offset, s + y_offset, unit, unit);
+                            colorflag = colorflag + 1;
+                            x_offset += broadness;
+                            y_offset += broadness;
+
+
+                        }
+
+
+
+
+
+
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    /*                                      */
+
+                }
+
+
+
+
+
+            }
+
+
+
+
+
+            /*                                    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*                                      */
+        }
+
+        function init() {
+            canvas=document.getElementById("c");
+            canvas.width=window.innerHeight;
+            canvas.height=window.innerHeight;
+            c=canvas.getContext("2d");
+
+
+            c.fillStyle="black";
+            c.fillRect(0,0,canvas.width,canvas.height);
+
+            drawLines(canvas,c);
+        }
+        </script>
+    <style>
+        body{
+
+            background: #080808;
+        }
+        #container {
+            height:100%;
+            weigth:100%;
+            margin: auto auto;
+            background: #080808;
+
+            display: grid;
+            justify-items: center;
+            grid-template-columns: 100%;
+            grid-template-rows: 100%;
+        }
+        #canvas{
+           background:black;
+            height:inherit;
+            width:fit-content;
+
+        }
+        @media screen and (max-width: 700px) {
+            /* Including section in the selector so it overrides existing styles */
+            #container {
+                display: block;
+            }
+
+            body {
+                background:black;
+                margin: 0px;
+            }
+        }
+
+
+    </style>
+</head>
+<body onload="init()">
+<div id="container">
+<div id="canvas">
+<canvas id="c">
+
+
+
+</canvas>
+</div>
+</div>
+
+</body>
+</html>
